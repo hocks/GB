@@ -1,0 +1,3 @@
+
+mmdsh "route del default; route add default gateway 198.202.112.15"
+

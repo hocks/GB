@@ -1,0 +1,9 @@
+<BGLBlock name='R001_C4_I1'>
+<BGLMidplane midplane='R001'>
+ <BGLPset>
+  <BGLIONode board='J102' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J10' />
+  <BGLComputeNodes board='J102' card='J12' />
+ </BGLPset>
+</BGLMidplane>
+</BGLBlock>

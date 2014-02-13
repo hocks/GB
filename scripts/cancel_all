@@ -1,0 +1,6 @@
+#!/bin/bash
+JOBS=`llq | grep R | grep -v bgsn-e | cut -c 1-12 | tr -s '\n'`
+for i in $JOBS; do
+	echo "canceling JobID: $i"
+	llcancel $i
+done

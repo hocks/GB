@@ -1,0 +1,1 @@
+db2 select blockID,status from TBGLBLOCK

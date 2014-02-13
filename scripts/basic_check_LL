@@ -1,0 +1,81 @@
+#!/bin/ksh93 -x  
+# changed 03/10/08 EH
+# added check on /dbhome filsystem
+# corrected check on LL demon
+
+TZ=PDT8PST
+
+# use our own df command that looks at /proc/mounts
+DFCMD="/users/operator/df-proc-bg"
+
+# when do we complain about space thresholds?
+THRESH_LOW=90
+THRESH_HI=95
+
+# what colors do we want the text to be?
+BLACK='[0;30m'
+BLUE='[0;34m'
+BROWN='[0;33m'
+CYAN='[0;36m'
+GRAY='[1;37m'
+GREEN='[1;32m'
+PINK='[1;35m'
+LTBLUE='[1;34m'
+LTCYAN='[1;36m'
+LTGRAY='[0;37m'
+LTGREEN='[1;32m'
+LTRED='[1;31m'
+PURPLE='[0;35m'
+RED='[0;31m'
+WHITE='[1;30m'
+YELLOW='[1;33m'
+
+# main loop
+  NOW=`date '+%D %T'`
+
+  echo -en "\033$BLUE ${NOW} -BLueGene checks: \n "
+
+
+#LoadLeveler check for bgsn
+#Check for LoadL_master, LoadL_negotiator, LoadL_starter, LoadL_schedd
+# reset
+OHSHIT=0
+
+# check the queue
+#JOBS=`llq | grep ^ds | egrep -c ' I | R ' `
+#echo -n "queue:${JOBS}, "
+
+MASTER=2
+STARTD=2
+NEGO=2
+SCHEDD=2
+
+#### Generate a list of all LL processes on the system and store
+#### the list in an array, one process record line per array
+#### element. 
+
+  ps aux | grep "loadl " | grep -v cp | grep -v grep | awk '{ print $11}' |while read line
+   do
+     if [ "$line" = "/opt/ibmll/LoadL/full/bin/LoadL_master" ]; then
+    MASTER=1
+    echo $MASTER
+    echo -en "\033$GREEN LL master running, \n"
+    elif [ "$line" =  "LoadL_starter" ]; then
+    STARTD=1
+    echo $STARTD
+    echo -en "\033$GREEN LL starter running, \n"
+   fi
+echo "\033$BLUE $MASTER $STARTD \n"
+  done  
+echo "\033$BLUE $MASTER $STARTD \n"
+
+
+if [ "${MASTER}" != 1 ]; then
+    echo -en "\033$RED LL master is missing, \n"
+fi
+if [ $STARTD -ne 1 ]; then
+    echo -en "\033$RED LL starter is missing, \n"
+fi
+
+
+

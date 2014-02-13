@@ -1,0 +1,9 @@
+
+db2 connect to bgdb0 user bglsysdb using db24bgls
+
+#for I in `db2 "select substr(ipaddress,1,16) from bglippool" | sort -n -t"." -k 4.1,4.3 | grep 198`
+for I in `db2 "select substr(ipaddress,1,16) from bglippool" | sort -n -t"." -k 4.1,4.3 ` 
+do
+echo $I
+done
+

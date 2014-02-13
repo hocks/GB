@@ -1,0 +1,17 @@
+LIST_BLOCKS="$PWD/list_blocks"
+LIST_JOBS="$PWD/list_jobs"
+
+JOBS=`$LIST_JOBS | awk '{print $4}'`
+RESERVED_BLOCKS=`cat /var/reserved_blocks.txt`
+JOBS="$JOBS
+$RESERVED_BLOCKS"
+BLOCKS=`$LIST_BLOCKS | grep "connected" | grep -v "B" | awk '{print $1}'`
+
+for i in $BLOCKS; do
+	for n in $JOBS; do
+		if [ "$i" = "$n" ]; then
+			BLOCKS=`echo "$BLOCKS" | grep -v "$n"`
+		fi
+	done
+done
+echo "Unused Blocks: $BLOCKS"

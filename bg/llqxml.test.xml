@@ -1,0 +1,815 @@
+<system 
+     	 system_name="Blue/Gene"
+     	 system_mem="- GB"
+     	 system_cpucount="6144"
+     	 system_cpuspeed="0.7 GHz"
+     	 system_cputype="PowerPC"
+     	 system_type="BG/L"
+     	 system_frames="3072"
+     	 system_perform="- GFLOPS"
+     	 system_time="02/07/08-15:56:33"
+       >
+<partition
+	 part_name="R02"
+	 part_nodelist="R02-M0,R02-M1"
+	 part_owner="u8240"
+	 part_mode="V"
+	 part_istorus="111"
+	 part_status="I"
+	 part_statuslong="Initialized : The block is ready to run application programs. ciodb has contacted ciod on all I/O Nodes."
+	 >
+	 </partition>
+<partition
+	 part_name="R01-top"
+	 part_nodelist="R01-M1"
+	 part_owner="sharikov"
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="I"
+	 part_statuslong="Initialized : The block is ready to run application programs. ciodb has contacted ciod on all I/O Nodes."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-5"
+	 part_nodelist="R00-M0-N9,R00-M0-N8"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top128-1"
+	 part_nodelist="R00-M1-N2,R00-M1-N3,R00-M1-N0,R00-M1-N1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-2"
+	 part_nodelist="R00-M1-N3,R00-M1-N2"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top128-4"
+	 part_nodelist="R00-M1-NC,R00-M1-ND,R00-M1-NE,R00-M1-NF"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-6"
+	 part_nodelist="R00-M0-NA,R00-M0-NB"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot"
+	 part_nodelist="R00-M0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-6"
+	 part_nodelist="R00-M1-NB,R00-M1-NA"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-4"
+	 part_nodelist="R00-M0-N7,R00-M0-N6"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="R02-top"
+	 part_nodelist="R02-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot256-1"
+	 part_nodelist="R00-M0-N4,R00-M0-N7,R00-M0-N6,R00-M0-N1,R00-M0-N0,R00-M0-N3,R00-M0-N2,R00-M0-N5"
+	 part_owner="loverde"
+	 part_mode="V"
+	 part_istorus="000"
+	 part_status="I"
+	 part_statuslong="Initialized : The block is ready to run application programs. ciodb has contacted ciod on all I/O Nodes."
+	 >
+	 </partition>
+<partition
+	 part_name="top256-1"
+	 part_nodelist="R00-M1-N2,R00-M1-N5,R00-M1-N4,R00-M1-N7,R00-M1-N6,R00-M1-N1,R00-M1-N0,R00-M1-N3"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="test1024"
+	 part_nodelist="R01-M0,R01-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-1"
+	 part_nodelist="R00-M1-N1,R00-M1-N0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot128-2"
+	 part_nodelist="R00-M0-N4,R00-M0-N5,R00-M0-N6,R00-M0-N7"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot128-3"
+	 part_nodelist="R00-M0-N8,R00-M0-N9,R00-M0-NA,R00-M0-NB"
+	 part_owner="jdmoore"
+	 part_mode="V"
+	 part_istorus="000"
+	 part_status="I"
+	 part_statuslong="Initialized : The block is ready to run application programs. ciodb has contacted ciod on all I/O Nodes."
+	 >
+	 </partition>
+<partition
+	 part_name="testsmall-2"
+	 part_nodelist="R01-M0-N6"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top256-2"
+	 part_nodelist="R00-M1-N9,R00-M1-N8,R00-M1-NB,R00-M1-NA,R00-M1-ND,R00-M1-NC,R00-M1-NF,R00-M1-NE"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top"
+	 part_nodelist="R00-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="SDSC"
+	 part_nodelist="R00-M0,R00-M1,R01-M0,R01-M1,R02-M0,R02-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="rack"
+	 part_nodelist="R00-M0,R00-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-5"
+	 part_nodelist="R00-M1-N9,R00-M1-N8"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="R01"
+	 part_nodelist="R01-M0,R01-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="testsmall-3"
+	 part_nodelist="R01-M0-N5"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="R02-bot"
+	 part_nodelist="R02-M0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot128-4"
+	 part_nodelist="R00-M0-NC,R00-M0-ND,R00-M0-NE,R00-M0-NF"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot32-1"
+	 part_nodelist="R00-M0-N0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-8"
+	 part_nodelist="R00-M1-NE,R00-M1-NF"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-7"
+	 part_nodelist="R00-M0-ND,R00-M0-NC"
+	 part_owner="perot"
+	 part_mode="V"
+	 part_istorus="000"
+	 part_status="I"
+	 part_statuslong="Initialized : The block is ready to run application programs. ciodb has contacted ciod on all I/O Nodes."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-7"
+	 part_nodelist="R00-M1-ND,R00-M1-NC"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="R00"
+	 part_nodelist="R00-M0,R00-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="R01-bot"
+	 part_nodelist="R01-M0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top128-2"
+	 part_nodelist="R00-M1-N4,R00-M1-N5,R00-M1-N6,R00-M1-N7"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top128-3"
+	 part_nodelist="R00-M1-N8,R00-M1-N9,R00-M1-NA,R00-M1-NB"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot256-2"
+	 part_nodelist="R00-M0-N9,R00-M0-N8,R00-M0-NB,R00-M0-NA,R00-M0-ND,R00-M0-NC,R00-M0-NF,R00-M0-NE"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot128-1"
+	 part_nodelist="R00-M0-N0,R00-M0-N1,R00-M0-N2,R00-M0-N3"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-3"
+	 part_nodelist="R00-M1-N5,R00-M1-N4"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-1"
+	 part_nodelist="R00-M0-N1,R00-M0-N0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="top64-4"
+	 part_nodelist="R00-M1-N7,R00-M1-N6"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="testsmall"
+	 part_nodelist="R01-M0-N7"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bottom"
+	 part_nodelist="R00-M0"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-8"
+	 part_nodelist="R00-M0-NF,R00-M0-NE"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-3"
+	 part_nodelist="R00-M0-N5,R00-M0-N4"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="bot64-2"
+	 part_nodelist="R00-M0-N3,R00-M0-N2"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="000"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<partition
+	 part_name="R01R02"
+	 part_nodelist="R01-M0,R01-M1,R02-M0,R02-M1"
+	 part_owner=""
+	 part_mode="C"
+	 part_istorus="111"
+	 part_status="F"
+	 part_statuslong="Free : The block is available to be allocated."
+	 >
+	 </partition>
+<node 
+	 node_name="R02-M0"
+	 node_state="Running"
+	 node_arch="BGL midplane PowerPC"
+	 node_cpus="1024"
+	 node_maxtasks="1024"
+	 node_speed="0.7"
+	 node_schedd="-1"
+	 node_scheddjobs="-1"
+	 node_avail_classes="(R02,1024),(SDSC,512),(R02-bot,512),(R01R02,512)"
+	 >
+<mem 
+	 mem_total="16384"
+	 mem_used="16384"
+	 mem_avail="0"
+	 mem_unit="mb"
+	 >
+</mem>
+<cpu 
+	 cpu_total="1024"
+	 cpu_avail="0"
+	 cpu_run="1024"
+	 >
+</cpu>
+<load load_avg="1" /></node>
+<node 
+	 node_name="R02-M1"
+	 node_state="Running"
+	 node_arch="BGL midplane PowerPC"
+	 node_cpus="1024"
+	 node_maxtasks="1024"
+	 node_speed="0.7"
+	 node_schedd="-1"
+	 node_scheddjobs="-1"
+	 node_avail_classes="(R02,1024),(R02-top,512),(SDSC,512),(R01R02,512)"
+	 >
+<mem 
+	 mem_total="16384"
+	 mem_used="16384"
+	 mem_avail="0"
+	 mem_unit="mb"
+	 >
+</mem>
+<cpu 
+	 cpu_total="1024"
+	 cpu_avail="0"
+	 cpu_run="1024"
+	 >
+</cpu>
+<load load_avg="1" /></node>
+<node 
+	 node_name="R00-M0"
+	 node_state="Running"
+	 node_arch="BGL midplane PowerPC"
+	 node_cpus="1024"
+	 node_maxtasks="1024"
+	 node_speed="0.7"
+	 node_schedd="-1"
+	 node_scheddjobs="-1"
+	 node_avail_classes="(bot,512),(SDSC,512),(rack,512),(R00,512),(bottom,512)"
+	 >
+<mem 
+	 mem_total="16384"
+	 mem_used="16384"
+	 mem_avail="0"
+	 mem_unit="mb"
+	 >
+</mem>
+<cpu 
+	 cpu_total="1024"
+	 cpu_avail="0"
+	 cpu_run="1024"
+	 >
+</cpu>
+<load load_avg="1" /></node>
+<node 
+	 node_name="R00-M1"
+	 node_state="Running"
+	 node_arch="BGL midplane PowerPC"
+	 node_cpus="1024"
+	 node_maxtasks="1024"
+	 node_speed="0.7"
+	 node_schedd="-1"
+	 node_scheddjobs="-1"
+	 node_avail_classes="(top,512),(SDSC,512),(rack,512),(R00,512)"
+	 >
+<mem 
+	 mem_total="16384"
+	 mem_used="16384"
+	 mem_avail="0"
+	 mem_unit="mb"
+	 >
+</mem>
+<cpu 
+	 cpu_total="1024"
+	 cpu_avail="0"
+	 cpu_run="1024"
+	 >
+</cpu>
+<load load_avg="1" /></node>
+<node 
+	 node_name="R01-M0"
+	 node_state="Running"
+	 node_arch="BGL midplane PowerPC"
+	 node_cpus="1024"
+	 node_maxtasks="1024"
+	 node_speed="0.7"
+	 node_schedd="-1"
+	 node_scheddjobs="-1"
+	 node_avail_classes="(test1024,512),(SDSC,512),(R01,512),(R01-bot,512),(R01R02,512)"
+	 >
+<mem 
+	 mem_total="16384"
+	 mem_used="16384"
+	 mem_avail="0"
+	 mem_unit="mb"
+	 >
+</mem>
+<cpu 
+	 cpu_total="1024"
+	 cpu_avail="0"
+	 cpu_run="1024"
+	 >
+</cpu>
+<load load_avg="1" /></node>
+<node 
+	 node_name="R01-M1"
+	 node_state="Running"
+	 node_arch="BGL midplane PowerPC"
+	 node_cpus="1024"
+	 node_maxtasks="1024"
+	 node_speed="0.7"
+	 node_schedd="-1"
+	 node_scheddjobs="-1"
+	 node_avail_classes="(R01-top,512),(test1024,512),(SDSC,512),(R01,512),(R01R02,512)"
+	 >
+<mem 
+	 mem_total="16384"
+	 mem_used="16384"
+	 mem_avail="0"
+	 mem_unit="mb"
+	 >
+</mem>
+<cpu 
+	 cpu_total="1024"
+	 cpu_avail="0"
+	 cpu_run="1024"
+	 >
+</cpu>
+<load load_avg="1" /></node>
+<job
+	 job_step="R01-top"
+	 job_name="37429"
+	 job_nodelist="(R01-M1,512)"
+	 job_queuedate="02/07/08-13:20:14"
+	 job_dispatchdate="02/07/08-13:20:14"
+	 job_enddate="02/08/08-15:56:33"
+	 job_owner="sharikov"
+	 job_queue="running"
+	 job_status="R"
+	 job_statusnr="R"
+	 job_statuslong="Running : The job is running."
+	 job_sysprio="0"
+	 job_totaltasks="512"
+	 job_taskspernode="512"
+	 job_nummachines="1"
+	 job_totaltasksR="512"
+	 job_taskspernodeR="512"
+	 job_totalnodesR="512,512"
+	 job_conscpu="1"
+	 job_consmem="1"
+	 job_comment="R01-top, NOT Unicore"
+	 job_taskexec="/users/sharikov/namd2"
+	 job_node_usage="NOT_SHARED"
+	 job_wall="86400"
+	 job_wallsoft="86400"
+	 job_cpu="86400"
+	 job_cpusoft="86400"
+	 job_restart="Yes"
+	 job_userprio="1"
+	 job_usertime="1"
+	 job_cputime="1"
+	 job_bgl_istorus="111"
+	 job_bgl_mode="C"
+	 job_bgl_args="t4_AtwoL2"
+	 job_bgl_env="BGLMPI_SIZE=512"
+	 >
+	 </job>
+<job
+	 job_step="bot256-1"
+	 job_name="37424"
+	 job_nodelist="(R00-M0-N4,32),(R00-M0-N3,32),(R00-M0-N6,32),(R00-M0-N1,32),(R00-M0-N0,32),(R00-M0-N7,32),(R00-M0-N2,32),(R00-M0-N5,32)"
+	 job_queuedate="02/07/08-08:21:11"
+	 job_dispatchdate="02/07/08-08:21:11"
+	 job_enddate="02/08/08-15:56:33"
+	 job_owner="loverde "
+	 job_queue="running"
+	 job_status="R"
+	 job_statusnr="R"
+	 job_statuslong="Running : The job is running."
+	 job_sysprio="0"
+	 job_totaltasks="256"
+	 job_taskspernode="512"
+	 job_nummachines="0.5"
+	 job_totaltasksR="256"
+	 job_taskspernodeR="512"
+	 job_totalnodesR="256,256"
+	 job_conscpu="1"
+	 job_consmem="1"
+	 job_comment="bot256-1, NOT Unicore"
+	 job_taskexec="/users/loverde/lmp_sdsc"
+	 job_node_usage="NOT_SHARED"
+	 job_wall="86400"
+	 job_wallsoft="86400"
+	 job_cpu="86400"
+	 job_cpusoft="86400"
+	 job_restart="Yes"
+	 job_userprio="1"
+	 job_usertime="1"
+	 job_cputime="1"
+	 job_bgl_istorus="000"
+	 job_bgl_mode="V"
+	 job_bgl_args=" -in in.test -log test-512.log "
+	 job_bgl_env="BGLMPI_ALLREDUCE=TREE BGLMPI_REDUCE=TREE BGLMPI_BCAST=TREE BGLMPI_MAPPING=TXYZ BGL_APP_WRITEBACK_RECOVERY=1 BGLMPI_SIZE=512"
+	 >
+	 </job>
+<job
+	 job_step="bot64-7"
+	 job_name="37431"
+	 job_nodelist="(R00-M0-NC,16),(R00-M0-ND,16)"
+	 job_queuedate="02/07/08-13:51:09"
+	 job_dispatchdate="02/07/08-13:51:09"
+	 job_enddate="02/08/08-15:56:33"
+	 job_owner="perot   "
+	 job_queue="running"
+	 job_status="R"
+	 job_statusnr="R"
+	 job_statuslong="Running : The job is running."
+	 job_sysprio="0"
+	 job_totaltasks="32"
+	 job_taskspernode="512"
+	 job_nummachines="0.0625"
+	 job_totaltasksR="32"
+	 job_taskspernodeR="512"
+	 job_totalnodesR="32,32"
+	 job_conscpu="1"
+	 job_consmem="1"
+	 job_comment="bot64-7, NOT Unicore"
+	 job_taskexec="/users/perot/VKnewIC/Isotropic/NewICs.exe"
+	 job_node_usage="NOT_SHARED"
+	 job_wall="86400"
+	 job_wallsoft="86400"
+	 job_cpu="86400"
+	 job_cpusoft="86400"
+	 job_restart="Yes"
+	 job_userprio="1"
+	 job_usertime="1"
+	 job_cputime="1"
+	 job_bgl_istorus="000"
+	 job_bgl_mode="V"
+	 job_bgl_args=""
+	 job_bgl_env="BGLMPI_SIZE=64"
+	 >
+	 </job>
+<job
+	 job_step="R02"
+	 job_name="37425"
+	 job_nodelist="(R02-M0,512)(R02-M1,512)"
+	 job_queuedate="02/07/08-09:28:37"
+	 job_dispatchdate="02/07/08-09:28:37"
+	 job_enddate="02/08/08-15:56:33"
+	 job_owner="u8240   "
+	 job_queue="running"
+	 job_status="R"
+	 job_statusnr="R"
+	 job_statuslong="Running : The job is running."
+	 job_sysprio="0"
+	 job_totaltasks="1024"
+	 job_taskspernode="512"
+	 job_nummachines="2"
+	 job_totaltasksR="1024"
+	 job_taskspernodeR="512"
+	 job_totalnodesR="1024,1024"
+	 job_conscpu="1"
+	 job_consmem="1"
+	 job_comment="R02, NOT Unicore"
+	 job_taskexec="su3_spectrum_dbl750"
+	 job_node_usage="NOT_SHARED"
+	 job_wall="86400"
+	 job_wallsoft="86400"
+	 job_cpu="86400"
+	 job_cpusoft="86400"
+	 job_restart="Yes"
+	 job_userprio="1"
+	 job_usertime="1"
+	 job_cputime="1"
+	 job_bgl_istorus="111"
+	 job_bgl_mode="V"
+	 job_bgl_args=""
+	 job_bgl_env="BGLMPI_SIZE=2048"
+	 >
+	 </job>
+<job
+	 job_step="bot128-3"
+	 job_name="37423"
+	 job_nodelist="(R00-M0-N9,32),(R00-M0-NA,32),(R00-M0-NB,32),(R00-M0-N8,32)"
+	 job_queuedate="02/07/08-07:29:53"
+	 job_dispatchdate="02/07/08-07:29:53"
+	 job_enddate="02/08/08-15:56:33"
+	 job_owner="jdmoore "
+	 job_queue="running"
+	 job_status="R"
+	 job_statusnr="R"
+	 job_statuslong="Running : The job is running."
+	 job_sysprio="0"
+	 job_totaltasks="128"
+	 job_taskspernode="512"
+	 job_nummachines="0.25"
+	 job_totaltasksR="128"
+	 job_taskspernodeR="512"
+	 job_totalnodesR="128,128"
+	 job_conscpu="1"
+	 job_consmem="1"
+	 job_comment="bot128-3, NOT Unicore"
+	 job_taskexec="/bggpfs/jdmoore/namd2"
+	 job_node_usage="NOT_SHARED"
+	 job_wall="86400"
+	 job_wallsoft="86400"
+	 job_cpu="86400"
+	 job_cpusoft="86400"
+	 job_restart="Yes"
+	 job_userprio="1"
+	 job_usertime="1"
+	 job_cputime="1"
+	 job_bgl_istorus="000"
+	 job_bgl_mode="V"
+	 job_bgl_args="/bggpfs/jdmoore/C4E1/15wt/C4E1.conf"
+	 job_bgl_env="BGLMPI_SIZE=256"
+	 >
+	 </job>
+<usage date="02/07/08-15:56:33" nodes="3072" running="1984" alloc="0"
+       usagestr="02/07/08-15:56:33,3072,1984,0">
+</usage>
+</system>

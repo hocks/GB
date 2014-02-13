@@ -1,0 +1,18 @@
+<BGLBlock name='R000_C16_I2'>
+<BGLMidplane midplane='R000'>
+ <BGLPset>
+  <BGLIONode board='J102' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J10' />
+  <BGLComputeNodes board='J102' card='J12' />
+  <BGLComputeNodes board='J102' card='J14' />
+  <BGLComputeNodes board='J102' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J02' />
+  <BGLComputeNodes board='J102' card='J04' />
+  <BGLComputeNodes board='J102' card='J06' />
+  <BGLComputeNodes board='J102' card='J08' />
+ </BGLPset>
+</BGLMidplane>
+</BGLBlock>

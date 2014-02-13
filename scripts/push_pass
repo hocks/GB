@@ -1,0 +1,13 @@
+#!/bin/bash
+export GLOBUS_LOCATION="/usr/local/apps/globus-4.0.1-r3"
+HOST_LIST="bgsn bg-login1 bg-login2 bg-login3 bg-login4"
+SSH="/usr/bin/ssh-old"
+
+for i in $HOST_LIST; do
+	scp /etc/passwd $i:/etc/passwd-new > /dev/null
+	scp /etc/shadow $i:/etc/shadow-new > /dev/null
+	scp /etc/group $i:/etc/group-new > /dev/null
+	ssh $i "cp /etc/passwd /etc/passwd-old; cp /etc/passwd-new /etc/passwd; rm -rf /etc/passwd-new"
+	ssh $i "cp /etc/shadow /etc/shadow-old; cp /etc/shadow-new /etc/shadow; rm -rf /etc/shadow-new"
+	ssh $i "cp /etc/group /etc/group-old; cp /etc/group-new /etc/group; rm -rf /etc/group-new"
+done

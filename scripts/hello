@@ -1,0 +1,18 @@
+#!/usr/bin/ksh
+#@ environment = COPY_ALL;
+#@ job_name = Hello-3k
+#@ job_type = bluegene 
+#@ comment = "Hello World - 3k"
+#@ bg_partition = R02
+#@ initialdir = /bggpfs/hocks/ll
+#@ error = /users/hocks/hello-1k.$(jobid).err
+#@ output = /users/hocks/hello-1k.$(jobid).out
+#@ notify_user = hocks@sdsc.edu
+#@ notification = error
+#@ input = /dev/null
+#@ class = parallel
+#@ wall_clock_limit = 00:10:00
+#@ queue
+
+
+/bgl/BlueLight/ppcfloor/bglsys/bin/mpirun -exe /bggpfs/hocks/ll/bin/hello -cwd /bggpfs/hocks/ll

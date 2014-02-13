@@ -1,0 +1,7 @@
+HOSTNAME=`hostname`
+if [ "$HOSTNAME" = "bgsn" ]; then
+	cd /bgl/BlueLight/ppcfloor/bglsys/bin
+	/bgl/BlueLight/ppcfloor/bglsys/bin/mmcs_db_console
+else
+	ssh bgsn ~hocks/scripts/mmcs_db_console
+fi

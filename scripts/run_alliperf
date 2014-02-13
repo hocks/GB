@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+@bgio_nodes_arr = `cat bgio.nodes`;
+
+foreach $bg_ionode ( @bgio_nodes_arr ) {
+
+chomp $bg_ionode;
+
+ print " starting runiperf on $bg_ionode \n";
+ system " mmdsh -L $bg_ionode date ";
+
+ ### system " mmdsh -L $bg_ionode /idgpfs/duff/network_testing/runiperf -h /idgpfs/duff/network_testing/tg-nsd.nodes > /dev/null & " ;
+
+ sleep 20;
+
+}
+

@@ -1,0 +1,96 @@
+#!/usr/bin/perl
+#
+#
+use strict;
+use English;
+use IO::Socket;
+use Cwd;
+my $host = "localhost";
+my $port = "32031";
+my $BLOCK= "bot256-2";
+my $uname= getpwuid($UID);
+my $replyformat = 0;
+################################################################
+# mmcs_cmd(szSocket, szCmd)
+#
+# mmcs_cmd -- send an mmcs command and gather and check the response.
+# inputs:
+# param0 -- remote tcp port to send command to.
+# param1 -- command string
+# outputs:
+# return values in a list.
+#
+sub mmcs_cmd ($$)
+{
+	my $szSocket = @_[0];
+	my $szCmd = @_[1];
+	# pick off the command parameter.
+	my $szReturn;
+	my @listReturn;
+	print $szCmd;
+	# echo the command
+	print $szSocket $szCmd; # execute the command.
+	if ($replyformat == 0) # reply format 0
+	{
+		$szReturn = <$szSocket>;
+		# read the result...
+		chomp($szReturn);
+		# get rid of lf at end.
+		@listReturn = split(/;/,$szReturn);
+	}
+	else
+		# reply format 1
+		{
+			while (1)
+			{
+			$szReturn = <$szSocket>; # read the result...
+			last if ($szReturn eq "\0\n");
+			chomp $szReturn;
+			$listReturn[++$#listReturn] = $szReturn;
+			}
+		}
+	return @listReturn;
+}
+
+#
+# Start of mainline
+#
+print "connecting $host:($port)\n";
+my @results;
+my $jobId = 0;
+my $x;
+my $remote = IO::Socket::INET->new( Proto => 'tcp', PeerAddr => $host, PeerPort => $port, );
+unless ($remote) 
+{
+	die "could not connect to mmcs_db_server" 
+};
+print "running\n";
+
+#Looks like this is where we start the real stuff
+
+# Set mmcs username to current unix user
+@results = mmcs_cmd($remote, "set_username $uname\n");
+foreach $x(@results) 
+{ 
+	print $x,"\n" 
+}
+
+# Set output correctly?
+#@results = mmcs_cmd($remote, "replyformat 1\n");
+#foreach $x(@results) 
+#{
+#	print $x,"\n"
+#}
+#$replyformat = 1;
+
+# List Blocks
+@results = mmcs_cmd($remote, "list_jobs\n");
+foreach $x(@results) 
+{
+	print $x,"\n"
+}
+
+print "close\n";
+close $remote;
+exit 0; # made it this far, must be successful
+ 

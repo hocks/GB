@@ -1,0 +1,228 @@
+<BGLBlock name='R001_C256_I32'>
+<BGLMidplane midplane='R001'>
+ <BGLPset>
+  <BGLIONode board='J117' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J117' card='J10' />
+  <BGLComputeNodes board='J117' card='J12' />
+  <BGLComputeNodes board='J117' card='J14' />
+  <BGLComputeNodes board='J117' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J117' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J117' card='J11' />
+  <BGLComputeNodes board='J117' card='J13' />
+  <BGLComputeNodes board='J117' card='J15' />
+  <BGLComputeNodes board='J117' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J117' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J117' card='J02' />
+  <BGLComputeNodes board='J117' card='J04' />
+  <BGLComputeNodes board='J117' card='J06' />
+  <BGLComputeNodes board='J117' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J117' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J117' card='J03' />
+  <BGLComputeNodes board='J117' card='J05' />
+  <BGLComputeNodes board='J117' card='J07' />
+  <BGLComputeNodes board='J117' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J115' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J115' card='J10' />
+  <BGLComputeNodes board='J115' card='J12' />
+  <BGLComputeNodes board='J115' card='J14' />
+  <BGLComputeNodes board='J115' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J115' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J115' card='J11' />
+  <BGLComputeNodes board='J115' card='J13' />
+  <BGLComputeNodes board='J115' card='J15' />
+  <BGLComputeNodes board='J115' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J115' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J115' card='J02' />
+  <BGLComputeNodes board='J115' card='J04' />
+  <BGLComputeNodes board='J115' card='J06' />
+  <BGLComputeNodes board='J115' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J115' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J115' card='J03' />
+  <BGLComputeNodes board='J115' card='J05' />
+  <BGLComputeNodes board='J115' card='J07' />
+  <BGLComputeNodes board='J115' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J113' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J113' card='J10' />
+  <BGLComputeNodes board='J113' card='J12' />
+  <BGLComputeNodes board='J113' card='J14' />
+  <BGLComputeNodes board='J113' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J113' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J113' card='J11' />
+  <BGLComputeNodes board='J113' card='J13' />
+  <BGLComputeNodes board='J113' card='J15' />
+  <BGLComputeNodes board='J113' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J113' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J113' card='J02' />
+  <BGLComputeNodes board='J113' card='J04' />
+  <BGLComputeNodes board='J113' card='J06' />
+  <BGLComputeNodes board='J113' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J113' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J113' card='J03' />
+  <BGLComputeNodes board='J113' card='J05' />
+  <BGLComputeNodes board='J113' card='J07' />
+  <BGLComputeNodes board='J113' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J111' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J111' card='J10' />
+  <BGLComputeNodes board='J111' card='J12' />
+  <BGLComputeNodes board='J111' card='J14' />
+  <BGLComputeNodes board='J111' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J111' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J111' card='J11' />
+  <BGLComputeNodes board='J111' card='J13' />
+  <BGLComputeNodes board='J111' card='J15' />
+  <BGLComputeNodes board='J111' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J111' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J111' card='J02' />
+  <BGLComputeNodes board='J111' card='J04' />
+  <BGLComputeNodes board='J111' card='J06' />
+  <BGLComputeNodes board='J111' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J111' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J111' card='J03' />
+  <BGLComputeNodes board='J111' card='J05' />
+  <BGLComputeNodes board='J111' card='J07' />
+  <BGLComputeNodes board='J111' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J108' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J108' card='J10' />
+  <BGLComputeNodes board='J108' card='J12' />
+  <BGLComputeNodes board='J108' card='J14' />
+  <BGLComputeNodes board='J108' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J108' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J108' card='J11' />
+  <BGLComputeNodes board='J108' card='J13' />
+  <BGLComputeNodes board='J108' card='J15' />
+  <BGLComputeNodes board='J108' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J108' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J108' card='J02' />
+  <BGLComputeNodes board='J108' card='J04' />
+  <BGLComputeNodes board='J108' card='J06' />
+  <BGLComputeNodes board='J108' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J108' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J108' card='J03' />
+  <BGLComputeNodes board='J108' card='J05' />
+  <BGLComputeNodes board='J108' card='J07' />
+  <BGLComputeNodes board='J108' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J106' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J106' card='J10' />
+  <BGLComputeNodes board='J106' card='J12' />
+  <BGLComputeNodes board='J106' card='J14' />
+  <BGLComputeNodes board='J106' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J106' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J106' card='J11' />
+  <BGLComputeNodes board='J106' card='J13' />
+  <BGLComputeNodes board='J106' card='J15' />
+  <BGLComputeNodes board='J106' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J106' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J106' card='J02' />
+  <BGLComputeNodes board='J106' card='J04' />
+  <BGLComputeNodes board='J106' card='J06' />
+  <BGLComputeNodes board='J106' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J106' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J106' card='J03' />
+  <BGLComputeNodes board='J106' card='J05' />
+  <BGLComputeNodes board='J106' card='J07' />
+  <BGLComputeNodes board='J106' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J104' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J104' card='J10' />
+  <BGLComputeNodes board='J104' card='J12' />
+  <BGLComputeNodes board='J104' card='J14' />
+  <BGLComputeNodes board='J104' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J104' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J104' card='J11' />
+  <BGLComputeNodes board='J104' card='J13' />
+  <BGLComputeNodes board='J104' card='J15' />
+  <BGLComputeNodes board='J104' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J104' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J104' card='J02' />
+  <BGLComputeNodes board='J104' card='J04' />
+  <BGLComputeNodes board='J104' card='J06' />
+  <BGLComputeNodes board='J104' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J104' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J104' card='J03' />
+  <BGLComputeNodes board='J104' card='J05' />
+  <BGLComputeNodes board='J104' card='J07' />
+  <BGLComputeNodes board='J104' card='J09' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J10' />
+  <BGLComputeNodes board='J102' card='J12' />
+  <BGLComputeNodes board='J102' card='J14' />
+  <BGLComputeNodes board='J102' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J102' card='J11' />
+  <BGLComputeNodes board='J102' card='J13' />
+  <BGLComputeNodes board='J102' card='J15' />
+  <BGLComputeNodes board='J102' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J02' />
+  <BGLComputeNodes board='J102' card='J04' />
+  <BGLComputeNodes board='J102' card='J06' />
+  <BGLComputeNodes board='J102' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J102' card='J03' />
+  <BGLComputeNodes board='J102' card='J05' />
+  <BGLComputeNodes board='J102' card='J07' />
+  <BGLComputeNodes board='J102' card='J09' />
+ </BGLPset>
+</BGLMidplane>
+</BGLBlock>

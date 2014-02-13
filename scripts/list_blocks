@@ -1,0 +1,7 @@
+#!/bin/bash
+HOSTNAME=`hostname`
+if [ "$HOSTNAME" = "bgsn" ]; then
+	$PWD/list_blocks_be
+else
+	ssh bgsn ~hocks/scripts/list_blocks_be
+fi

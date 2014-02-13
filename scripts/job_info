@@ -1,0 +1,7 @@
+#!/bin/bash
+HOSTNAME=`hostname`
+if [ "$HOSTNAME" = "bgsn" ]; then
+	/opt/ibmll/LoadL/full/bin/llq -s $1
+else
+	ssh bgsn /opt/ibmll/LoadL/full/bin/llq -s $1
+fi

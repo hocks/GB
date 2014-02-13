@@ -1,0 +1,125 @@
+#!/usr/bin/perl -w
+my $date1 = `date`;
+print "Blue Gene queue status at $date1";
+print "------------------------------------------------------ \n";
+printf '%-16s %-12s %-10s %-11s %-11s %-12s',"Job Step ID","Owner","Partition","LL Status","BG Status","Time Remaining";
+print "\n";
+print "------------------------------------------------------------------------------- \n";
+
+my $LLQData = `/opt/ibmll/LoadL/full/bin/llq -l`;
+my @Jobs = split(/^===/m, $LLQData);
+my @Running = ();
+my @Idle = ();
+my @NQed = ();
+my @Completed = ();
+my @UH = ();
+shift(@Jobs); # Toss first, which is empty
+foreach my $str (@Jobs)
+{
+if ($str =~ m|^\s*Job Step Id:(.*)$|m) {
+    $JobStepId = &trim($1);
+}
+if ($str =~ m|^\s*Owner:(.*)$|m) {
+    $Owner = &trim($1);
+}
+if ($str =~ m|^\s*Partition Requested:(.*)$|m) {
+    $PartReq = &trim($1);
+}
+if ($str =~ m|^\s*Partition Allocated:(.*)$|m) {
+    $PartAll = &trim($1);
+}
+if ($PartAll ne "")
+{
+    $Partition = $PartAll;
+}
+else
+{
+  if ($PartReq ne "")
+  {
+    $Partition = $PartReq;
+  }
+  else
+  {
+    $Partition = " ";
+  }
+}
+if ($str =~ m|^\s*Status:(.*)$|m) {
+    $Status = &trim($1);
+}
+if ($str =~ m|^\s*Blue Gene Status:(.*)$|m) {
+    $BGStatus = &trim($1);
+}
+if ($str =~ m|^\s*Dispatch Time:(.*)$|m) {
+    $StartTime = &trim($1);
+    $StartTime_S = `date --date="$StartTime" +%s`;
+    $CTime = `date --date="$date1" +%s`;
+}
+if ($str =~ m|^\s*Wall Clk Hard Limit:(.*)$|m) {
+    $WallString = &trim($1);
+    @WallArray = ($WallString =~ m/(\d+)/g);
+    $Wall = $WallArray[3];
+}
+if ($JobStepId ne "bgsn-e.13088.0")
+{
+ if ($Status eq "Running")
+ {
+   $Timer = $Wall - $CTime + $StartTime_S;  
+   $HH = sprintf '%02d',$Timer/3600;
+   $MM = sprintf '%02d',($Timer-$HH*3600)/60;
+   $SS = sprintf '%02d',($Timer-$HH*3600-$MM*60);
+   $TimeRemain = "$HH:$MM:$SS";
+ }
+ else
+ {
+   $TimeRemain = " ";
+ }
+ $pstr = sprintf '%-16s %-12s %-10s %-11s %-11s %-8s',$JobStepId,$Owner,$Partition,$Status,$BGStatus,$TimeRemain;
+ if ($Status eq "Running")
+ {
+   push(@Running,$pstr);
+ }
+ if ($Status eq "Idle")
+ {
+   push(@Idle,$pstr);  
+ }
+ if ($Status eq "Not Queued")
+ {
+   push(@NQed,$pstr);
+ }
+ if ($Status eq "Completed")
+ {
+   push(@Completed,$pstr);
+ }
+ if ($Status eq "User Hold")
+ {
+   push(@UH,$pstr);
+ }
+}
+}
+foreach $str (@Running)
+{
+ print "$str\n";
+}
+foreach $str (@Idle)
+{
+ print "$str\n";
+}
+foreach $str (@NQed)
+{
+ print "$str\n";
+}
+foreach $str (@Completed)
+{
+ print "$str\n";
+}
+foreach $str (@UH)
+{
+ print "$str\n";
+}
+sub trim {
+  my $str = shift;
+  $str = '' unless defined($str);
+  $str =~ s|^\s*||;
+  $str =~ s|\s*$||;
+  return($str);
+}

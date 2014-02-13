@@ -1,0 +1,84 @@
+
+
+
+bg_SN=198.202.115
+typeset int A=50
+typeset int B=90
+typeset int C=130
+typeset int D=170
+
+tg_SN=198.202.112
+typeset int tg_ip=115
+
+tg_last_ip=154
+tg_first_ip=115
+
+while :
+do
+
+   echo   
+   echo "  if [ \$ioNode_IPaddress =  $bg_SN.$A -o \$ioNode_IPaddress =  $bg_SN.$B -o \$ioNode_IPaddress = $bg_SN.$C -o \$ioNode_IPaddress =  $bg_SN.$D ] "
+
+   echo "  then"
+   echo 
+   echo "  # set start values for tg_SN and tg_ip "
+   echo "   tg_SN=$tg_SN "
+   echo "   tg_ip=$tg_ip "
+   echo 
+   echo "    ping -c 1 \$tg_SN.\$tg_ip "
+   echo "    ping_RC=\$? "
+   echo "    nfsServerDown=\$ping_RC "
+   echo
+   echo "    while [ \$nfsServerDown -eq 1 ] "
+   echo "     do "
+   echo "         echo -n \" \$tg_SN.\$tg_ip down, incremeting server to  \" "
+   echo
+   echo "      	  let tg_ip=\$tg_ip+1  "
+   echo 
+   echo "         if [ \$tg_ip -gt $tg_last_ip ] "
+   echo "          then "  
+   echo "           tg_ip=$tg_first_ip  "
+   echo "         fi "
+   echo
+   echo "         echo \" \$tg_SN.\$tg_ip  \" "
+   echo 
+   echo "         ping -c 1 \$tg_SN.\$tg_ip "
+   echo "         ping_RC=\$? "
+   echo "         nfsServerDown=\$ping_RC " 
+   echo 
+   echo "     done "
+   echo 
+   echo 
+   echo "      gpfs_retries=10101010101010101010"
+   echo 
+   echo "      test -d /bgpfs || mkdir -p /bgpfs  "
+   echo 
+   echo "      NFS_OPTS=nolock,mountvers=3,rsize=8192,wsize=8192,async  "
+   echo 
+   echo 
+   echo "      echo \"mounting mount \$tg_SN.\$tg_ip:/bgpfs /bgpfs -o \$NFS_OPTS\"  "
+   echo "      until mount \$tg_SN.\$tg_ip:/bgpfs /bgpfs -o \$NFS_OPTS; do  "
+   echo "           echo \"GPFS: Waiting for network...\"  "
+   echo "           sleep 1  "
+   echo "           let gpfs_retries=\$gpfs_retries-1  "
+   echo "           if [ \$retries -eq 0 ]; then  "
+   echo "              echo \"Error: unable to mount filesystem\"  "
+   echo "              echo \"Cmd: mount \$tg_SN.\$tg_ip:/bgpfs /bgpfs -o \$NFS_OPTS\"  "
+   echo "              ifconfig eth1  "
+   echo "              exit 0  "
+   echo "           fi  "
+   echo "      done  "
+   echo "  fi"
+
+
+
+(( A = $A + 1 ))
+(( B = $B + 1 ))
+(( C = $C + 1 ))
+(( D = $D + 1 ))
+(( tg_ip = $tg_ip + 1 ))
+
+
+done
+
+

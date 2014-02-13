@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Start Time [[mm/dd/yy] HH:MM]: "
+read start
+echo "Duration [minutes]: "
+read duration
+echo "Users [user1 user2]"
+read users
+echo "Number of nodes: "
+read nodes
+
+llmkres -t "$start" -d "$duration" -U "$users" -h "$nodes"

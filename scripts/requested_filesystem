@@ -1,0 +1,3 @@
+#!/bin/bash
+for i in `llq | grep I | grep -v Owner | awk '{print $1}'`; do llqs -s $i | grep gpfs; done
+for i in `llq | grep I | grep -v Owner | awk '{print $1}'`; do llqs -s $i | grep users; done

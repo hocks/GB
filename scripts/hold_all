@@ -1,0 +1,6 @@
+#!/bin/bash
+JOBS=`llq -b | grep bgsn | grep I |awk '{ print $1 }'`
+for i in $JOBS; do
+	echo "holding JobID: $i"
+	llhold -s $i
+done

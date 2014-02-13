@@ -1,0 +1,6 @@
+#!/bin/bash
+JOBS=`llq | grep H | grep -v bgsn-e | cut -c 1-12 | tr -s '\n'`
+for i in $JOBS; do
+	echo "Releasing JobID: $i"
+	/opt/ibmll/LoadL/full/bin/llq -s $i
+done

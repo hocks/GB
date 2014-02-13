@@ -1,0 +1,4 @@
+ln -s /usr/local/apps/krb5-1.4.3/bin/kinit  /usr/sdsc/bin/kinit
+ln -s /usr/local/apps/krb5-1.4.3/bin/kvno  /usr/sdsc/bin/kvno
+ln -s /usr/local/apps/krb5-1.4.3/sbin/ktutil  /usr/sdsc/sbin/ktutil
+

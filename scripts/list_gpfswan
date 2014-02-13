@@ -1,0 +1,29 @@
+#!/bin/bash
+LLQ="/opt/ibmll/LoadL/full/bin/llq"
+
+JOBS=`$LLQ | grep H | grep -v bgsn-e | cut -c 1-12 | tr -s '\n'`
+echo "$JOBS"
+echo "-------------"
+for i in $JOBS; do
+	echo "$i"
+        LL_INFO=`$LLQ -s $i`
+        ARGS=`echo "$LL_INFO" | grep "Args" | grep "gpfs-wan"`
+        INITIAL_DIR=`echo "$LL_INFO" | grep "Initial Working Dir" | grep "gpfs-wan"`
+        if [ "$ARGS" != "" ]; then
+		echo "$ARGS"
+		echo $i: "$ARGS"
+		JOB_IDS="$JOB_IDS $i"
+	fi
+	if [ "$INITIAL_DIR" != "" ]; then
+		echo "$INITIAL_DIR"
+		echo $i: "$INITIAL_DIR"
+		JOB_IDS="$JOB_IDS $i"
+	fi
+done
+
+echo "-------------"
+echo "$JOB_IDS"
+echo "-------------"
+echo "non gpfs jobs"
+echo "-------------"
+JOB_LIST=`echo "$JOBS" | tr -s '\n' ' '`

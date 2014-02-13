@@ -1,0 +1,132 @@
+#!/usr/bin/ksh -x
+# IBM_PROLOG_BEGIN_TAG 
+# This is an automatically generated prolog. 
+#  
+# bos520 src/bos/usr/sbin/skulker/skulker.sh 1.33 
+#  
+# Licensed Materials - Property of IBM 
+#  
+# (C) COPYRIGHT International Business Machines Corp. 1989,1995 
+# All Rights Reserved 
+#  
+# US Government Users Restricted Rights - Use, duplication or 
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+#  
+# IBM_PROLOG_END_TAG 
+# @(#)28	1.33  src/bos/usr/sbin/skulker/skulker.sh, cmdcntl, bos520 1/5/01 00:11:56
+#
+# COMPONENT_NAME: (CMDCNTL) system control commands
+#
+# FUNCTIONS:
+#
+# ORIGINS: 27
+#
+# (C) COPYRIGHT International Business Machines Corp. 1989, 1996
+# All Rights Reserved
+# Licensed Materials - Property of IBM
+#
+# US Government Users Restricted Rights - Use, duplication or
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+
+# Remove the file only if no process has it currently open 
+
+# WARNING: THE WHOLE PURPOSE OF THIS SCRIPT IS TO REMOVE FILES,
+# SO IT HAS THE POTENTIAL FOR UNEXPECTED RESULTS.
+
+remove_file()
+{
+	if [ -z "`/usr/sbin/fuser $1 2>/dev/null`" ]; then
+	   /bin/rm -f $1
+	fi
+}
+
+date=`/bin/date`
+uname=`/bin/uname -nm`
+if msg=`/usr/bin/dspmsg skulker.cat 1 '\n%1$s started at %2$s on %3$s\n' $0 "$date" "$uname"`
+then :
+else msg='echo "\n$0 started at $date on $uname\n"'; fi
+eval echo $msg
+
+# Uncomment the NATIVE entry that is appropriate for your system.
+# For Distributed environments, '/native' is a path to the local filesystems;
+# '/' is sufficient for standalone systems.
+# NATIVE=/native/
+NATIVE=/
+
+# get rid of old primary.outputs that got lost
+if [ -d ${NATIVE}var/spool/qdaemon ]
+then
+  /usr/bin/find ${NATIVE}var/spool/qdaemon -mtime +4 -type f -print | \
+  while read FILE2REM
+  do
+	remove_file $FILE2REM
+  done
+fi
+
+# get rid of old qdir files
+if [ -d ${NATIVE}var/spool/lpd/qdir ]
+then
+  /usr/bin/find ${NATIVE}var/spool/lpd/qdir -mtime +4 -type f -print | \
+  while read FILE2REM
+  do
+	remove_file $FILE2REM
+  done
+fi
+
+# get rid of files that get left in the mail queues
+if [ -d ${NATIVE}var/spool/qftp ]
+then
+  /usr/bin/find ${NATIVE}var/spool/qftp \( -name 'tmp*' -o -name '[0-9]*' \) -mtime +2 -print | \
+  while read FILE2REM
+  do
+	remove_file $FILE2REM
+  done
+fi
+
+# get rid of all ordinary files in the ${NATIVE}tmp directory older than 24
+# hours and not accessed or modified in the past 24 hours.
+
+/usr/bin/find ${NATIVE}tmp -xdev -atime +4 -mtime +4 -type f -print | \
+  	while read FILE2REM
+	do
+		remove_file $FILE2REM
+	done
+
+# clean out ${NATIVE}var/tmp
+if [ -d ${NATIVE}var/tmp ]
+then
+  /usr/bin/find ${NATIVE}var/tmp -atime +4 -mtime +4 -type f -print | \
+  while read FILE2REM
+  do
+	remove_file $FILE2REM
+  done
+fi
+
+# get rid of news items older than 45 days
+if [ -d ${NATIVE}var/news ]
+then
+  /usr/bin/find ${NATIVE}var/news -mtime +45 -type f -print | \
+  while read FILE2REM
+  do
+	remove_file $FILE2REM
+  done
+fi
+
+# get rid of anything in a .putdir directory more than a day old.
+for i in `/usr/bin/find $NATIVE ${NATIVE}var ${NATIVE}tmp \
+	-xdev -type d -name ".putdir" -print`
+do
+  /usr/bin/find $i -mtime +1 -type f -print | \
+  while read FILE2REM
+  do
+	remove_file $FILE2REM
+  done
+done
+
+date=`/usr/bin/date`
+if msg=`/usr/bin/dspmsg skulker.cat 2 '\n%1$s finished at %2$s on %3$s\n' $0 "$date" "$uname"`
+then :
+else msg='/usr/bin/echo "\n$0 finished at $date on $uname\n"'; fi
+eval /usr/bin/echo $msg
+

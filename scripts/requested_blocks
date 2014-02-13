@@ -1,0 +1,13 @@
+#!/bin/bash
+WAITING_JOBS=`llq | grep -e I -e S -e H | cut -c 1-14 | grep "bgsn\."`
+echo "->Checking JobIDs:"
+echo "$WAITING_JOBS"
+echo "================================"
+
+WAITING_JOBS_UNFORMATTED=`echo $WAITING_JOBS | tr -d "\n"`
+echo "JobID        Partition Requested"
+echo "--------------------------------"
+for i in $WAITING_JOBS_UNFORMATTED; do 
+	PARTITION=`$PWD/job_info $i | grep "Partition Requested" | cut -c 22-100`
+	echo "$i $PARTITION"
+done

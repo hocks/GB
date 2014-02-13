@@ -1,0 +1,32 @@
+<BGLBlock name='R001_C32_I4'>
+<BGLMidplane midplane='R001'>
+ <BGLPset>
+  <BGLIONode board='J102' card='J18' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J10' />
+  <BGLComputeNodes board='J102' card='J12' />
+  <BGLComputeNodes board='J102' card='J14' />
+  <BGLComputeNodes board='J102' card='J16' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J18' chip='U11'/>
+  <BGLComputeNodes board='J102' card='J11' />
+  <BGLComputeNodes board='J102' card='J13' />
+  <BGLComputeNodes board='J102' card='J15' />
+  <BGLComputeNodes board='J102' card='J17' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J19' chip='U01'/>
+  <BGLComputeNodes board='J102' card='J02' />
+  <BGLComputeNodes board='J102' card='J04' />
+  <BGLComputeNodes board='J102' card='J06' />
+  <BGLComputeNodes board='J102' card='J08' />
+ </BGLPset>
+ <BGLPset>
+  <BGLIONode board='J102' card='J19' chip='U11'/>
+  <BGLComputeNodes board='J102' card='J03' />
+  <BGLComputeNodes board='J102' card='J05' />
+  <BGLComputeNodes board='J102' card='J07' />
+  <BGLComputeNodes board='J102' card='J09' />
+ </BGLPset>
+</BGLMidplane>
+</BGLBlock>

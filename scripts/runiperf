@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+
+use Getopt::Std;
+
+getopts ('h:c:');
+
+$HOST=`hostname -s`;
+
+if ( $opt_h eq "" ) {  usage(); }
+## if ( $opt_c eq "" ) {  usage(); }
+
+
+$host_file = $opt_h;
+
+@hosts_arr = `cat $host_file`;
+chomp @hosts_arr;
+
+$iperf_client = $opt_c;
+
+system "cp /dev/null /idgpfs/duff/bg_network_testing/bg2tg/$HOST";
+
+foreach $server (@hosts_arr) {
+
+## print " /work/uxduff/bin/iperf -c $iperf_client \n"; 
+
+## print " /work/uxduff/bin/iperf -c $server \n"; 
+
+print " Testing $HOST (client)  to $host (server) \n";
+ ### system " /work/uxduff/bin/iperf -c $server >> /idgpfs/duff/bg_network_testing/bg2tg/$HOST 2>&1 "; 
+
+}
+
+
+sub usage {
+
+print "USAGE: $0 -h <hostsfile> [ -c <iperf_client> | -s <iperf_server> ] \n";
+exit(0);
+
+}
+
+
